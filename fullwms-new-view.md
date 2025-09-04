@@ -6,9 +6,8 @@
  - ger_menus
  - ger_modulo_tipo_permissao
 
-
-## FASE 1: CREATE ABSTRACTION VIEW IN THE DATABASE
-Before, create a file with every comand that use, and first use it in a controled devevelopment enviroment.
+## PHASE 1: CREATE ABSTRACTION VIEW IN THE DATABASE
+Before, create a file with every command that you use, and first use it in a controlled development environment.
 - **STEP 1: Insert the new module in the main table**<br/>
     This is an example of the query:
     ```sql
@@ -51,13 +50,12 @@ Before, create a file with every comand that use, and first use it in a controle
     - 2: Edit
     - 3: Show
     - 4: Delete
-    - 5: Autocomplete (not implement)
+    - 5: Autocomplete (not implemented)
     - 6: Action
     - 7: Readonly
     - 8: Form
 
-    This permissions is availables in the table `ger_modulo_tipo_permissao`
-
+    These permissions are available in the table `ger_modulo_tipo_permissao`
 
 - **STEP 3 (Optional): Add the module to the main menu**
     ```sql
@@ -93,17 +91,15 @@ Before, create a file with every comand that use, and first use it in a controle
             )
     ```
 
-## FASE 2: CREATE JSON FOR THE VIEW
+## PHASE 2: CREATE JSON FOR THE VIEW
  - **STEP 1: Create JSON file**
    - File: `/config/view/{MODULO_ID}.json`
-   - Note: You have logout and login for update frontend changes
+   - Note: You have to logout and login to update frontend changes
 
-
-## FASE 3: CREATE SERVICE
+## PHASE 3: CREATE SERVICE
 - **STEP 1:** Create router
    - File: `/services/{SERVICE_NAME}/index.js`
 - **STEP 2:** Create service file
    - File: `/services/{SERVICE_NAME}/{SERVICE_NAME}.js`
 - **STEP 3:** Create test file
    - File: `/services/{SERVICE_NAME}/{SERVICE_NAME}.spec.js`
-
