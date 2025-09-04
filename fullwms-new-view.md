@@ -57,7 +57,40 @@ Before, create a file with every command that you use, and first use it in a con
 
     These permissions are available in the table `ger_modulo_tipo_permissao`
 
-- **STEP 3 (Optional): Add the module to the main menu**
+- **STEP 3 (Optional): Add the module for action**<br/>
+    This is an example of the query for creation of action of modules, when the module create need execute action in database:
+    ```sql
+        INSERT INTO
+            ger_modulo (
+              ID,
+              NOME,
+              DISPONIVEL,
+              TABELA,
+              ENDPOINT,
+              MODULO_PAI_ID,
+              URL,
+              MENU,
+              TIPO,
+              NOME_EN,
+              NOME_SP
+          )
+        VALUES (
+            1000000XXX,
+            'Action name',
+            'S',
+            '',
+            '/api/{service_name}/action/{action_name}',
+            '',
+            '',
+            'N',
+            'A',
+            '',
+            ''
+        )
+    ```
+    When the module of action is create, automatic is create the permition for this.
+
+- **STEP 4 (Optional): Add the module to the main menu**
     ```sql
         INSERT INTO
             ger_menus (
@@ -78,12 +111,12 @@ Before, create a file with every command that you use, and first use it in a con
             (
               'S',
               'F',
-              110230,
+              YYYXXX, -- YYY: id of parent, XXX: id for your module
               1,
               3,
-              'Paripassu - Recebimentos no Sincronizados',
+              'Module name',
               NULL,
-              110,
+              110, -- YYY: id of parent
               21,
               'F',
               NULL,
@@ -103,3 +136,9 @@ Before, create a file with every command that you use, and first use it in a con
    - File: `/services/{SERVICE_NAME}/{SERVICE_NAME}.js`
 - **STEP 3:** Create test file
    - File: `/services/{SERVICE_NAME}/{SERVICE_NAME}.spec.js`
+
+## PHASE 4: CREATE ACTIONS (OPTIONAL)
+- **STEP 1:** Create router for action
+   - File: `/services/{SERVICE_NAME}/action/index.js`
+- **STEP 2:** Create action file
+   - File: `/services/{SERVICE_NAME}/action/{ACTION_NAME}.js`
