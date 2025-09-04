@@ -1,4 +1,4 @@
-# CREATE A NEW VIEW
+# CREATE A NEW VIEW IN FULLWMS
 
 ## KEY TABLES
  - ger_modulo
